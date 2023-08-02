@@ -1,20 +1,30 @@
+import java.time.LocalDate;
+
 public class Persona {
     // ATTRIBUTI
 
     String nome;
 
-    int eta;
+    LocalDate datadiNascita;
 
     // COSTRUTTORI
 
-    public Persona(String nome, int eta) {
+    public Persona(String nome, LocalDate datadiNascita) {
         this.nome = nome;
-        this.eta = eta;
+        this.datadiNascita = datadiNascita;
     }
 
 
     // GETTER AND SETTER
 
     // METODI
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nome='" + nome + '\'' +
+                ", datadiNascita=" + datadiNascita +
+                '}';
+    }
 }
 

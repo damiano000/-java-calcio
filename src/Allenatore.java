@@ -1,12 +1,19 @@
-public class Allenatore extends Persona{
+import java.time.LocalDate;
+
+public class Allenatore extends Persona {
     // ATTRIBUTI
     String strategia;
 
-    // COSTRUTTORI
-    public Allenatore(String nome, int eta) {
-        super(nome, eta);
+    public Allenatore(String nome, LocalDate datadiNascita) {
+        super(nome, datadiNascita);
     }
+
+    // COSTRUTTORI
+
+
     // GETTER E SETTER
 
     // METODI
+
+
 }
