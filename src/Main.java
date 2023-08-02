@@ -33,13 +33,28 @@ public class Main {
             String posizioneR = ruoligc[posizionegc];
             System.out.println(posizioneR);
 
-            LocalDate dataNascitaGiocatore = LocalDate.of(random.nextInt(1985, 2007), random.nextInt(1, 13), random.nextInt(1, 29));
+            LocalDate dataNascitaGiocatore = LocalDate.of(random.nextInt(1985, 2007), random.nextInt(1, 12), random.nextInt(1, 29));
             System.out.println(dataNascitaGiocatore);
 
             giocatori = new Giocatore(nomeGiocatore, dataNascitaGiocatore, posizioneR);
 
             System.out.println(giocatori.toString());
         }
+        String nomeAllenatore = nomi[random.nextInt(nomi.length)];
+        System.out.println("Nome = " + nomeAllenatore);
+        int etaallenatore = random.nextInt(16, 40);
+        System.out.println("Eta = " + etaallenatore);
+        String[] tattiche = { "offensiva", "difensiva", "contrattaco", "ribasso", "avanzata"};
+        int indice = (random.nextInt(0 , tattiche.length));
+        String tatticheP = tattiche[indice];
+        System.out.println(tatticheP);
+
+        LocalDate dataNascitaAllenatore = LocalDate.of(random.nextInt(1975, 2000), random.nextInt(1, 12), random.nextInt(1, 29));
+        System.out.println(dataNascitaAllenatore);
+
+        Allenatore allenatore = new Allenatore(nomeAllenatore, dataNascitaAllenatore , tatticheP);
+
+        System.out.println(allenatore.toString());
     }
 }
 
