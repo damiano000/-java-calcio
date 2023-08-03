@@ -1,6 +1,7 @@
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class Main {
@@ -31,14 +32,13 @@ public class Main {
 
             int posizionegc = (random.nextInt(0, ruoligc.length));
             String posizioneR = ruoligc[posizionegc];
-            System.out.println(posizioneR);
+            System.out.println("ruolo = " + posizioneR);
 
             LocalDate dataNascitaGiocatore = LocalDate.of(random.nextInt(1985, 2007), random.nextInt(1, 12), random.nextInt(1, 29));
             System.out.println(dataNascitaGiocatore);
 
             giocatori = new Giocatore(nomeGiocatore, dataNascitaGiocatore, posizioneR);
 
-            System.out.println(giocatori.toString());
         }
         String nomeAllenatore = nomi[random.nextInt(nomi.length)];
         System.out.println("Nome = " + nomeAllenatore);
@@ -47,14 +47,37 @@ public class Main {
         String[] tattiche = { "offensiva", "difensiva", "contrattaco", "ribasso", "avanzata"};
         int indice = (random.nextInt(0 , tattiche.length));
         String tatticheP = tattiche[indice];
-        System.out.println(tatticheP);
+        System.out.println("strategia=" + tatticheP);
 
         LocalDate dataNascitaAllenatore = LocalDate.of(random.nextInt(1975, 2000), random.nextInt(1, 12), random.nextInt(1, 29));
-        System.out.println(dataNascitaAllenatore);
+        System.out.println( dataNascitaAllenatore);
 
         Allenatore allenatore = new Allenatore(nomeAllenatore, dataNascitaAllenatore , tatticheP);
 
-        System.out.println(allenatore.toString());
+        String nomeArbitro = nomi[random.nextInt(nomi.length)];
+        LocalDate etaArbitro = LocalDate.of(random.nextInt(1990, 2005), random.nextInt(1, 12), random.nextInt(1, 29));
+        String ruolo = ("Arbitro pricipale");
+
+        Arbitro arbitro = new Arbitro(nomeArbitro, etaArbitro, ruolo);
+
+        Squadra squadra1 = new Squadra("Juventus", giocatori , allenatore);
+        Squadra squadra2 = new Squadra("Napoli", giocatori , allenatore);
+
+        boolean start = false;
+        int goal = 0;
+
+        Partita partita = new Partita(squadra1, squadra2, arbitro, start, goal);
+
+        partita.startPartita();
+
+        partita.goalCasual();
+        partita.goalCasual();
+        partita.goalCasual();
+        partita.goalCasual();
+        partita.goalCasual();
+        partita.goalCasual();
+        partita.endPartita();
+
     }
 }
 
